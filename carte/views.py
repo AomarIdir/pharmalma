@@ -1,4 +1,25 @@
 from django.shortcuts import render
+import json
 
 def carte_view(request):
-    return render(request, 'carte.html')
+    ville = request.GET.get('ville')
+    message = None
+    #points_str = request.GET.get('points')
+
+    if not ville:
+        message = "Veuillez entrer une ville"
+    
+    points = [{'lat': 47.344062, 'lng': -1.5289619}, {'lat': 47.341824, 'lng': -1.526767}]
+#   if points_str:
+#       try:
+#           points = json.loads(points_str) 
+#       except json.JSONDecodeError:
+#           points = []
+#           message = "Format de points invalide"
+
+    context = {
+        'ville': ville,
+        'message': message,
+        'points' : json.dumps(points)
+    }
+    return render(request, 'carte.html', context)
