@@ -3,9 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>Bienvenue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            position: relative; /* Pour positionner le bouton */
+        }
+        .admin-button {
+            position: absolute; /* Positionnement absolu pour placer le bouton en haut à droite */
+            top: 20px; /* Espace depuis le haut */
+            right: 20px; /* Espace depuis la droite */
+            background-color: #007bff; /* Couleur de fond du bouton */
+            color: white; /* Couleur du texte */
+            border: none; /* Pas de bordure */
+            padding: 10px 15px; /* Espacement interne */
+            border-radius: 4px; /* Coins arrondis */
+            text-decoration: none; /* Pas de soulignement */
+            font-size: 16px; /* Taille de la police */
+        }
+        .admin-button:hover {
+            background-color: #0056b3; /* Couleur au survol */
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Largeur maximale du formulaire */
+            margin: auto; /* Centrer le formulaire sur la page */
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 80%; /* Réduire la largeur des inputs */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        h2 {
+            text-align: center; /* Centrer le titre */
+            color: #333; /* Couleur du texte du titre */
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue sur notre site</h1>
-    <p>Ceci est la page d'accueil.</p>
+    <a href="/admin" class="admin-button">Accès à l'espace pharmacien</a>
+
+    <form>
+        <h2>Rechercher un médicament disponible proche de chez vous</h2>
+
+        <label for="ville">Ville :</label>
+        <input type="text" id="ville" name="ville" required>
+
+        <label for="medicament">Médicament :</label>
+        <input type="text" id="medicament" name="medicament" required>
+
+        <input type="submit" value="Soumettre">
+    </form>
 </body>
 </html>
