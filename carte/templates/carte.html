@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Google</title>
+    <style>
+        /* Donnez une taille à la carte */
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4tK0ZwN8tu9ZQgF6Y3TJ2EPScOCSULk"></script>
+    <script>
+        function initMap() {
+            var uluru = {lat: -25.363, lng: 131.044}; // Coordonnées d'exemple
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <h1>Ma Carte Google</h1>
+    <div id="map"></div>
+</body>
+</html>
