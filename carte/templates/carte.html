@@ -3,22 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte Google</title>
+    <title>Carte des pharmacies</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4tK0ZwN8tu9ZQgF6Y3TJ2EPScOCSULk"></script>
 </head>
 <body>
-
-    <h2>Entrez une ville pour voir sa carte</h2>
-    {% if message %}
-    <p style="color: red;">{{ message }}</p>
-    {% endif %}
-
-    <form method="get" action="{% url 'carte' %}">
-        <label for="ville">Ville : </label>
-        <input type="text" name="ville" id="ville" required>
-        <button type="submit">Voir la carte</button>
-    </form>
-
     <div id="map" style="height: 500px; width: 100%;"></div>
 
     <script>
