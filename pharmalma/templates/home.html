@@ -60,11 +60,30 @@
             color: #333; /* Couleur du texte du titre */
         }
     </style>
+    <script>
+        function redirectToCarte(event) {
+            event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+
+            // Récupération des valeurs des champs
+            const ville = document.getElementById("ville").value;
+            const medicament = document.getElementById("medicament").value;
+
+            //TODO: récuperer les points des pharma ayant le med en stock
+            //return sous forme [{"lat":47.344062,"lng":-1.5289619},{"lat":47.341824,"lng":-1.526767}]
+            //point = getPharma(medicament)
+
+            // Construction de l'URL avec les paramètres
+            const url = `/carte?ville=${encodeURIComponent(ville)}&points=[{"lat":47.344062,"lng":-1.5289619},{"lat":47.341824,"lng":-1.526767}]`;
+
+            // Redirection vers l'URL construite
+            window.location.href = url;
+        }
+    </script>
 </head>
 <body>
     <a href="/admin" class="admin-button">Accès à l'espace pharmacien</a>
 
-    <form>
+    <form onsubmit="redirectToCarte(event)">
         <h2>Rechercher un médicament disponible proche de chez vous</h2>
 
         <label for="ville">Ville :</label>
